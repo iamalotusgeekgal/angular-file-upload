@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "partials/variables";
+@import "partials/mixins";
+
+body {
+    font-size: $body-text-font-size;
+    font-weight: $body-text-font-weight;
+    font-family: $body-font-family;
+    padding: 1rem;
+}
+
+.card {
+    @include rounded(10px);
+    padding: 2rem;
+    margin-bottom: 1rem;
+}
+    

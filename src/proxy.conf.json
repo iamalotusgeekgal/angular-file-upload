@@ -1,0 +1,12 @@
+{
+    "/": {
+        "target": "http://localhost:3000",
+        "secure": false,
+        "logLevel": "debug"
+    },
+    "/accessibility/verify-508-compliance": {
+        "target": "http://localhost:3000/accessibility/verify-508-compliance",
+        "secure": false,
+        "logLevel": "debug"
+    }
+}

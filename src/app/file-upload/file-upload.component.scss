@@ -1,0 +1,143 @@
+@import "../../styles/partials/variables";
+@import "../../styles/partials/mixins";
+  
+.container {
+    @include container-layout;
+    padding-top: 80px;
+
+    .upload-form {
+        @include container-layout;
+        width: $upload-form-width;
+        margin: auto;
+        margin-top: 15px;
+
+        .label {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .result {
+            margin-right: 10px;
+        }
+
+        .error {
+            color: $error-color;
+        }
+        
+        .success {
+            color: $success-color;
+        }
+
+        .center {
+            margin-left: 0px;
+        }
+
+        table {
+            list-style-type: none;
+            margin: auto;
+            width: 100%;
+            padding: 0%;
+        
+            tr {
+                @include tr-layout;
+                height: 50px;
+                text-align: left;
+        
+                td {
+                    margin-left: 1rem;
+                }
+            }
+        }
+    }
+}
+
+:host ::ng-deep .p-fileupload {
+    .p-fileupload-buttonbar {
+        background-color: $buttonbar-bg-color;
+        color: $buttonbar-text-color;
+        border: 1px solid $buttonbar-border-color;
+        padding: 1.25rem;
+        border-bottom: 0 none;
+        border-top-right-radius: 6px;
+        border-top-left-radius: 6px;
+
+        .p-button {
+            margin-right: 0.5rem;
+            display: inline-flex;
+            cursor: pointer;
+        
+            user-select: none;
+            align-items: center;
+            vertical-align: bottom;
+            text-align: center;
+        
+            color: #ffffff;
+            background: #3B82F6;
+            border: 1px solid #3B82F6;
+            padding: 0.75rem 1.25rem;
+            font-size: 1rem;
+            transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+            @include rounded;
+        }
+
+        .p-fileupload-choose {
+            position: relative;
+            overflow: hidden;
+        }
+    }
+
+    .p-fileupload-content {
+        background: $fileupload-row-color !important;
+        .ng-star-inserted {
+            img {
+                width: 120px;
+                height: 75px;
+            }
+        }
+
+        .p-fileupload-row {
+            div:first-child {
+                width: 0%;
+                flex: 0.2 0.2 auto;
+            }
+        }
+    }
+}
+
+:host ::ng-deep .p-datatable {
+    min-width: 50rem;
+    border: solid 0.5px #79898f;
+
+    .p-datatable-thead > tr > th {
+        text-align: left;
+        padding: 1rem 1rem;
+        border: 1px solid #dee2e6;
+        border-width: 0 0 1px 0;
+        font-weight: 700;
+        color: #343a40;
+        background: #f8f9fa;
+        transition: box-shadow 0.2s;
+        width: 100%;
+    }
+
+    .p-datatable-tbody > tr:nth-child(even) {
+        background-color: $failure-even-row-color;
+    }
+    
+    .p-datatable-tbody > tr:nth-child(odd) {
+        background-color: $failure-odd-row-color;
+    }
+
+    .p-datatable-tbody > tr {
+        color: #495057;
+        transition: box-shadow 0.2s;
+    }
+
+    .p-datatable-tbody > tr > td {
+        text-align: left;
+        border: 1px solid $failure-row-border-color;
+        border-width: 0 0 1px 0;
+        padding: 1rem 1rem;
+        width: 100%;
+    }
+}

@@ -1,0 +1,32 @@
+<div class="container card">
+
+  <h2>508 Accessibility Compliance Tool</h2>
+
+  <p>
+    Upload a single file which is either pdf, doc or html extensions to test for 508 accessibility compliance.
+  </p>
+  
+  <p-divider></p-divider>
+
+  <div class="upload-form">
+    <p-fileUpload id="fileUpload" name="file[]" (onSelect)="onSelect($event)" (onClear)="onClear($event)" [customUpload]="true" (uploadHandler)="this.handleUpload($event)" accept="{{acceptedFiles}}"></p-fileUpload>
+
+    <div class="row mt-5 center " *ngIf="showResults">
+      <div class="label">Test Result:</div>
+      <div id="upload-result" [class.error]="!fileUploadResponse['508_accessibility_compliant']" [class.success]="fileUploadResponse['508_accessibility_compliant']">{{complianceResultText}}</div>
+      <p-table id="failure-results-table" *ngIf="!fileUploadResponse['508_accessibility_compliant']" [value]="fileUploadResponse.failReasons" [tableStyle]="{ 'min-width': '50rem' }">
+        <ng-template pTemplate="header" class="p-datatable-thead">
+            <tr>
+                <th>Failure Reason(s)</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-reason class="p-element p-datatable-tbody">
+            <tr>
+                <td>{{ reason }}</td>
+            </tr>
+        </ng-template>
+      </p-table>
+    </div>
+
+  </div>
+   </div>

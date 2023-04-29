@@ -1,0 +1,16 @@
+@mixin container-layout {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+@mixin tr-layout {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+@mixin rounded($radius: 6px) {
+    border-radius: $radius;
+}
+  
